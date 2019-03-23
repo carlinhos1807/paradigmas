@@ -31,4 +31,19 @@ htmlListItems l = map(\p -> "<LI>" ++ p ++ "<LI>")l
 formata :: [String] -> [String]
 formata s = map(\p -> "<LI>" ++ p ++ "<LI>")s
 htmlListItems2 :: [String] -> [String]
-htmlListItems2 l = formata l
+htmlListItems2 l1 = formata l1
+
+--4.Defina uma função que receba uma string e produza outra retirando as vogais.
+--Com funcao anonima:
+
+delvowel :: String -> String
+delvowel s = filter(\p -> p /= 'a' && p /= 'e'  && p /= 'i'  && p /= 'o'  && p /= 'u'  && p /= 'A'  && p /= 'E'  && p /= 'I'  && p /= 'O'  && p /= 'U' )s
+
+--Sem funcao anonima:
+
+filtraVog :: String -> String
+filtraVog s1 = filter(\p -> p /= 'a' && p /= 'e'  && p /= 'i'  && p /= 'o'  && p /= 'u'  && p /= 'A'  && p /= 'E'  && p /= 'I'  && p /= 'O'  && p /= 'U' )s1
+delvowel2 :: String -> String
+delvowel2 s = filtraVog s
+
+
