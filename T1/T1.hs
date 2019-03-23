@@ -27,6 +27,7 @@ htmlListItems :: [String] -> [String]
 htmlListItems l = map(\p -> "<LI>" ++ p ++ "<LI>")l
 
 --Sem funcao anonima:
+
 formata :: [String] -> [String]
 formata s = map(\p -> "<LI>" ++ p ++ "<LI>")s
 htmlListItems2 :: [String] -> [String]
