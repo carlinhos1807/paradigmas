@@ -1,3 +1,4 @@
+import Data.Char
 --1.Crie uma função isVowel :: Char -> Bool que verifique se um caracter é uma vogal ou não.
 
 isVowel :: Char -> Bool
@@ -73,6 +74,15 @@ isInt s1 = verTam (length((filter(`elem` ['A'..'Z'])s1))) (length((filter(`elem`
 --8.Escreva uma função lastName :: String -> String que, dado o nome completo de uma pessoa, obtenha seu último sobrenome.
 lastName :: String -> String
 lastName n = last(words n)
+
+--9.Escreva uma função userName :: String -> String que, dado o nome completo de uma pessoa, crie um nome de usuário (login) da pessoa,
+--formado por: primeira letra do nome seguida do sobrenome, tudo em minúsculas.
+
+toMaius :: String -> String
+toMaius n = map(toLower)n
+userName :: String -> String
+userName s = toMaius (showLitChar (head s) (last(words s)))
+
 
 --10.Escreva uma função encodeName :: String -> String que substitua vogais em uma string, conforme o esquema a seguir: a = 4, e = 3, i = 2, o = 1, u = 0.
 
