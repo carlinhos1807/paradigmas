@@ -58,5 +58,10 @@ substitui c = map(\p -> if p /= ' ' then '-' else p)c
 codifica2 :: String -> String
 codifica2 s = substitui s
 
+--6.Escreva uma função firstName :: String -> String que, dado o nome completo de uma pessoa, obtenha seu primeiro nome. 
+
+firstName :: String -> String
+firstName = takeWhile (/=' ')
+
 
 
