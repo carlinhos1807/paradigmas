@@ -46,4 +46,17 @@ filtraVog s1 = filter(\p -> p /= 'a' && p /= 'e'  && p /= 'i'  && p /= 'o'  && p
 delvowel2 :: String -> String
 delvowel2 s = filtraVog s
 
+--5.Defina uma função que receba uma string, possivelmente contendo espaços, e que retorne outra string substituindo os demais caracteres por '-', mas mantendo os espaços.
+--Com funcao anonima:
+
+codifica :: String -> String
+codifica s = map(\p -> if p /= ' ' then '-' else p)s
+
+--Sem funcao anonima:
+substitui :: String -> String
+substitui c = map(\p -> if p /= ' ' then '-' else p)c
+codifica2 :: String -> String
+codifica2 s = substitui s
+
+
 
