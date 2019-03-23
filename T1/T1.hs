@@ -68,7 +68,14 @@ firstName = takeWhile (/=' ')
 verTam :: Int -> Int -> Bool
 verTam t1 t2 = (t1+t2) == 0
 isInt :: String -> Bool
-isInt s1 = verTam (length((filter(`elem` ['A'..'Z'])s1))) (length((filter(`elem` ['a'..'z'])s1))) 
+isInt s1 = verTam (length((filter(`elem` ['A'..'Z'])s1))) (length((filter(`elem` ['a'..'z'])s1)))
+
+--10.Escreva uma função encodeName :: String -> String que substitua vogais em uma string, conforme o esquema a seguir: a = 4, e = 3, i = 2, o = 1, u = 0.
+
+encodeName :: String -> String
+encodeName s1 = map(\p -> if (p == 'u' || p == 'U') then '0' else if (p == 'o' || p == 'O') then '1' else if (p == 'i' || p == 'I')then '2' 
+else if (p == 'E' || p == 'e') then '3' 
+else if (p == 'a' || p == 'A') then '4' else p)s1
 
 
 
