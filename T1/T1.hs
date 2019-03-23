@@ -63,5 +63,12 @@ codifica2 s = substitui s
 firstName :: String -> String
 firstName = takeWhile (/=' ')
 
+--7.Escreva uma função isInt :: String -> Bool que verifique se uma dada string só contém dígitos de 0 a 9. Exemplos
+
+verTam :: Int -> Int -> Bool
+verTam t1 t2 = (t1+t2) == 0
+isInt :: String -> Bool
+isInt s1 = verTam (length((filter(`elem` ['A'..'Z'])s1))) (length((filter(`elem` ['a'..'z'])s1))) 
+
 
 
