@@ -1,0 +1,100 @@
+funcao ["palavras","paralelas","pedal","paralelepipedo"]
+betterEncodeName "Badtz Maru"
+betterEncodeName "Anderson Silva"
+encodeName "badtz Maru"
+encodeName "Anderson Silva"
+userName "JON BON JOVI"
+userName "Anderson Silva"
+lastName "JON BON JOVI"
+lastName "Anderson Silva"
+isInt "2014A"
+isInt "2014a"
+isInt "901"
+firstName "JON BON JOVI"
+firstName "Anderson Silva"
+codifica2 "Rio Grande do Sul"
+codifica "Rio Grande do Sul"
+delvowel2 "andrea"
+delvowel2 "xyz"
+delvowel2 "ae"
+delvowel "ae"
+delvowel "xyz"
+delvowel "andrea"
+delVowel "andrea"
+delVog "andrea"
+delvog "andrea"
+htmlListItems2 ["abra","ca","dabra"]
+htmlListItems ["abra","ca","dabra"]
+addComma ["str","str2","str3"]
+isVowel 'c'
+isVowel 'C'
+isVowel 'U'
+isVowel 'O'
+isVowel 'I'
+isVowel 'I'
+isVowel 'E'
+isVowel 'A'
+isVowel 'u'
+isVowel 'o'
+isVowel 'i'
+isVowel 'e'
+isVowel 'a'
+:load D:/User/Documentos/GitHub/paradigmas2/T1/T1.hs
+betterEncodeName "Badtz Maru"
+:r
+:r
+betterEncodeName "uela"
+:r
+betterEncodeName "uela"
+:r
+betterEncodeName "uela"
+:r
+:r
+:r
+:r
+funcao ["palavras","paralelas","pedal","paralelepipedo"]
+func ["palavras","paralelas","pedal","paralelepipedo"]
+:load D:/User/Documentos/GitHub/paradigmas2/T1/T1.hs
+funcao ["pedal","teste"]
+:r
+funcao ["pedal","teste"]
+:r
+:r
+:r
+:r
+:r
+:r
+:r
+:r
+:r
+:r
+:r
+:r
+funcao ["paralelepipedo","ab"]
+:r
+funcao ["paralelepipedo","ab"]
+:r
+funcao ["paralelepipedo","ab"]
+:r
+:r
+:r
+funcao ["paralelepipedo","ab"]
+:r
+:r
+:r
+funcao ["paralelepipedo","ab"]
+:r
+funcao ["paralelepipedo","ab"]
+:r
+funcao ["paralelepipedo","ab"]
+:r
+:r
+funcao ["paralelepipedo","ab"]
+funcao ["aaaaaaaaaaab","ab"]
+:r
+:r
+funcao ["aaaaaaaaaaa","ab"]
+funcao ["aaaaaaaaaa","ab"]
+funcao "aaaaaaaaaa"
+:r
+:r
