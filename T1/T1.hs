@@ -91,5 +91,9 @@ encodeName s1 = map(\p -> if (p == 'u' || p == 'U') then '0' else if (p == 'o' |
 else if (p == 'E' || p == 'e') then '3' 
 else if (p == 'a' || p == 'A') then '4' else p)s1
 
+--12.Dada uma lista de strings, produzir outra lista com strings de 10 caracteres, 
+--usando o seguinte esquema: strings de entrada com mais de 10 caracteres são truncadas, strings com até 10 caracteres são completadas com '.' até ficarem com 10 caracteres.
+funcao :: [String] -> [String]
+funcao x = map(\p -> if length p > 10 then (take 10 p) else verifica p 1)x
 
 
