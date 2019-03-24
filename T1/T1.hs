@@ -91,9 +91,18 @@ encodeName s1 = map(\p -> if (p == 'u' || p == 'U') then '0' else if (p == 'o' |
 else if (p == 'E' || p == 'e') then '3' 
 else if (p == 'a' || p == 'A') then '4' else p)s1
 
+--11.Escreva uma função betterEncodeName :: String -> String que substitua vogais em uma string, conforme este esquema: a = 4, e = 3, i = 1, o = 0, u = 00. 
+betterEncodeName :: String -> String
+betterEncodeName s1 = concatMap(\p -> if (p == 'u' || p == 'U') then "00" else if (p == 'o' || p == 'O') then "1" else if (p == 'i' || p == 'I')then "2" 
+else if (p == 'E' || p == 'e') then "3" 
+else if (p == 'a' || p == 'A') then "4" else [p])s1
+
 --12.Dada uma lista de strings, produzir outra lista com strings de 10 caracteres, 
 --usando o seguinte esquema: strings de entrada com mais de 10 caracteres são truncadas, strings com até 10 caracteres são completadas com '.' até ficarem com 10 caracteres.
+concatena :: String -> String
+concatena s = s ++ (take (10 - (length s)) "..........")
+
 funcao :: [String] -> [String]
-funcao x = map(\p -> if length p > 10 then (take 10 p) else verifica p 1)x
+funcao x = map(\p -> if length p > 10 then (take 10 p) else concatena p)x
 
 
