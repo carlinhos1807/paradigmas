@@ -1,4 +1,5 @@
 import Data.Char
+
 --1.Crie uma função isVowel :: Char -> Bool que verifique se um caracter é uma vogal ou não.
 
 isVowel :: Char -> Bool
@@ -22,6 +23,7 @@ addComma s = map(\p -> p ++ ",")s
 
 --3.Crie uma função htmlListItems :: [String] -> [String]
 --que receba uma lista de strings e retorne outra lista contendo as strings formatadas como itens de lista em HTML.
+
 --Com funcao anonima:
 
 htmlListItems :: [String] -> [String]
@@ -35,6 +37,7 @@ htmlListItems2 :: [String] -> [String]
 htmlListItems2 l1 = formata l1
 
 --4.Defina uma função que receba uma string e produza outra retirando as vogais.
+
 --Com funcao anonima:
 
 delvowel :: String -> String
@@ -48,12 +51,14 @@ delvowel2 :: String -> String
 delvowel2 s = filtraVog s
 
 --5.Defina uma função que receba uma string, possivelmente contendo espaços, e que retorne outra string substituindo os demais caracteres por '-', mas mantendo os espaços.
+
 --Com funcao anonima:
 
 codifica :: String -> String
 codifica s = map(\p -> if p /= ' ' then '-' else p)s
 
 --Sem funcao anonima:
+
 substitui :: String -> String
 substitui c = map(\p -> if p /= ' ' then '-' else p)c
 codifica2 :: String -> String
@@ -72,6 +77,7 @@ isInt :: String -> Bool
 isInt s1 = verTam (length((filter(`elem` ['A'..'Z'])s1))) (length((filter(`elem` ['a'..'z'])s1)))
 
 --8.Escreva uma função lastName :: String -> String que, dado o nome completo de uma pessoa, obtenha seu último sobrenome.
+
 lastName :: String -> String
 lastName n = last(words n)
 
@@ -92,6 +98,7 @@ else if (p == 'E' || p == 'e') then '3'
 else if (p == 'a' || p == 'A') then '4' else p)s1
 
 --11.Escreva uma função betterEncodeName :: String -> String que substitua vogais em uma string, conforme este esquema: a = 4, e = 3, i = 1, o = 0, u = 00. 
+
 betterEncodeName :: String -> String
 betterEncodeName s1 = concatMap(\p -> if (p == 'u' || p == 'U') then "00" else if (p == 'o' || p == 'O') then "1" else if (p == 'i' || p == 'I')then "2" 
 else if (p == 'E' || p == 'e') then "3" 
@@ -99,9 +106,9 @@ else if (p == 'a' || p == 'A') then "4" else [p])s1
 
 --12.Dada uma lista de strings, produzir outra lista com strings de 10 caracteres, 
 --usando o seguinte esquema: strings de entrada com mais de 10 caracteres são truncadas, strings com até 10 caracteres são completadas com '.' até ficarem com 10 caracteres.
+
 concatena :: String -> String
 concatena s = s ++ (take (10 - (length s)) "..........")
-
 funcao :: [String] -> [String]
 funcao x = map(\p -> if length p > 10 then (take 10 p) else concatena p)x
 
