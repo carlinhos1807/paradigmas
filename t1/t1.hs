@@ -15,3 +15,8 @@ isVowel c
       | c == 'O' = True
       | c == 'U' = True
       | otherwise = False
+
+--2.Escreva uma função addComma, que adicione uma vírgula no final de cada string contida numa lista.
+
+addComma :: [String] -> [String]
+addComma s = map(\p -> p ++ ",")s
