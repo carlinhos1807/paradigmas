@@ -20,3 +20,18 @@ isVowel c
 
 addComma :: [String] -> [String]
 addComma s = map(\p -> p ++ ",")s
+
+--3.Crie uma função htmlListItems :: [String] -> [String]
+--que receba uma lista de strings e retorne outra lista contendo as strings formatadas como itens de lista em HTML.
+
+--Com funcao anonima:
+
+htmlListItems :: [String] -> [String]
+htmlListItems l = map(\p -> "<LI>" ++ p ++ "<LI>")l
+
+--Sem funcao anonima:
+
+formata :: [String] -> [String]
+formata s = map(\p -> "<LI>" ++ p ++ "<LI>")s
+htmlListItems2 :: [String] -> [String]
+htmlListItems2 l1 = formata l1
