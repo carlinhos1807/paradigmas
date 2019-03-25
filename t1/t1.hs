@@ -96,3 +96,10 @@ encodeName :: String -> String
 encodeName s1 = map(\p -> if (p == 'u' || p == 'U') then '0' else if (p == 'o' || p == 'O') then '1' else if (p == 'i' || p == 'I')then '2' 
 else if (p == 'E' || p == 'e') then '3' 
 else if (p == 'a' || p == 'A') then '4' else p)s1
+
+--11.Escreva uma função betterEncodeName :: String -> String que substitua vogais em uma string, conforme este esquema: a = 4, e = 3, i = 1, o = 0, u = 00. 
+
+betterEncodeName :: String -> String
+betterEncodeName s1 = concatMap(\p -> if (p == 'u' || p == 'U') then "00" else if (p == 'o' || p == 'O') then "1" else if (p == 'i' || p == 'I')then "2" 
+else if (p == 'E' || p == 'e') then "3" 
+else if (p == 'a' || p == 'A') then "4" else [p])s1
