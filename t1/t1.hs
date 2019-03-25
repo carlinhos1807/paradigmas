@@ -75,3 +75,8 @@ verTam :: Int -> Int -> Bool
 verTam t1 t2 = (t1+t2) == 0
 isInt :: String -> Bool
 isInt s1 = verTam (length((filter(`elem` ['A'..'Z'])s1))) (length((filter(`elem` ['a'..'z'])s1)))
+
+--8.Escreva uma função lastName :: String -> String que, dado o nome completo de uma pessoa, obtenha seu último sobrenome.
+
+lastName :: String -> String
+lastName n = last(words n)
