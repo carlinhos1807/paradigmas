@@ -103,3 +103,11 @@ betterEncodeName :: String -> String
 betterEncodeName s1 = concatMap(\p -> if (p == 'u' || p == 'U') then "00" else if (p == 'o' || p == 'O') then "1" else if (p == 'i' || p == 'I')then "2" 
 else if (p == 'E' || p == 'e') then "3" 
 else if (p == 'a' || p == 'A') then "4" else [p])s1
+
+--12.Dada uma lista de strings, produzir outra lista com strings de 10 caracteres, 
+--usando o seguinte esquema: strings de entrada com mais de 10 caracteres são truncadas, strings com até 10 caracteres são completadas com '.' até ficarem com 10 caracteres.
+
+concatena :: String -> String
+concatena s = s ++ (take (10 - (length s)) "..........")
+funcao :: [String] -> [String]
+funcao x = map(\p -> if length p > 10 then (take 10 p) else concatena p)x
