@@ -80,3 +80,11 @@ isInt s1 = verTam (length((filter(`elem` ['A'..'Z'])s1))) (length((filter(`elem`
 
 lastName :: String -> String
 lastName n = last(words n)
+
+--9.Escreva uma função userName :: String -> String que, dado o nome completo de uma pessoa, crie um nome de usuário (login) da pessoa,
+--formado por: primeira letra do nome seguida do sobrenome, tudo em minúsculas.
+
+toMaius :: String -> String
+toMaius n = map(toLower)n
+userName :: String -> String
+userName s = toMaius (showLitChar (head s) (last(words s)))
