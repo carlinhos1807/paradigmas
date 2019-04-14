@@ -187,6 +187,6 @@ genCase4 = do
         ncircles_linha = 16
         nlinhas = 3
         x_frst = 80.0
-        amplitude_f_x = 55.0
+        amplitude_f_x = 60.0
         raio = 20.0
         (w,h) = (1920,1080) -- width,height da imagem SVG
