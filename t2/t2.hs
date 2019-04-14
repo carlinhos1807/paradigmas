@@ -86,3 +86,37 @@ genCase1 = do
         nrects = 50
         nrects_por_linha = 10
         (w,h) = (1920,1080) -- width,height da imagem SVG
+
+-- Converte graus para radianos
+radiano :: Float -> Float
+radiano n = (n * pi) / 180
+
+-- Gera uma lista de angulos
+lista_trigonometrica :: Int->Float -> [Float]
+lista_trigonometrica n a = [radiano(a*m) | m <- [0..fromIntegral(n-1)]]
+
+-- Gera circulos
+get_circles :: Int -> Float -> Float -> Float ->[Circle]
+get_circles n a b r= [(((a+5*r*cos(m)),(b+5*r*sin(m))),r)| m <- lista_trigonometrica n (360.0 / fromIntegral(n))]
+
+-- Gera cor para cada circulo
+get_color_circles :: Int -> Int-> [(Int,Int,Int)]
+get_color_circles n h = circlesPalette n h
+
+-------------------------------------------------------------------------------
+-- Funcao que gera case 2
+-------------------------------------------------------------------------------
+genCase2 :: IO ()
+genCase2 = do
+  writeFile "case2.svg" $ svgstrs
+  where svgstrs = svgBegin w h ++ svgfigs ++ svgEnd
+        svgfigs = svgElements svgCircle circles (map svgStyle palette)
+        circles = get_circles ncircles x_centro y_centro raio_cada_circulo
+        palette = get_color_circles ncircles ht
+        -- Cordenadas do centro da circunferencia relativa a cada circulo
+        x_centro = 80.0
+        y_centro = 80.0
+        raio_cada_circulo = 10.0
+        ncircles = 12
+        ht = 0
+        (w,h) = (1920,1080) -- width,height da imagem SVG
