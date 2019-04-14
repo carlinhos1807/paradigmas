@@ -120,3 +120,36 @@ genCase2 = do
         ncircles = 12
         ht = 0
         (w,h) = (1920,1080) -- width,height da imagem SVG
+
+-- Calcula a posicao dos outros 2 circulos gerados a partir do circulo inferior esquerdo
+calcula_sobrepostos :: Float->Float->Float->[Circle]
+calcula_sobrepostos x y r = [if m == 1 then ((x,y),r) else if m == 2 then ((x+r,y),r) else ((x+r/2,y-r),r) | m <-[1..3]]
+
+-- Gera os 3 circulos no padrao definido, recebe o circulo inferior esquerdo como base
+get_sobrepostos :: Float -> Float -> Float -> Int ->[Circle]
+get_sobrepostos x y r n = concat[if(m `mod`2 == 1) then calcula_sobrepostos ((fromIntegral(m+1)/2)*x) y r else if m == 1 then calcula_sobrepostos x y r 
+else calcula_sobrepostos ((fromIntegral(m) / 2)*x) (2*y) r| m <-[1..(n)]]
+
+-- Calcula cor para cada circulo
+calcula_cor_sobrepostos :: Int -> [(Int,Int,Int)]
+calcula_cor_sobrepostos n = [if(m == 1) then (255,0,0) else if (m==2) then (0,255,0) else (0,0,255) | m <-[1..3]]
+
+-- Gera cor para os circulos
+get_color_sobrepostos :: Int -> [(Int,Int,Int)]
+get_color_sobrepostos n = concat[calcula_cor_sobrepostos m | m <- [1..(n)]]
+
+-------------------------------------------------------------------------------
+-- Funcao que gera case 3
+-------------------------------------------------------------------------------
+genCase3 :: IO ()
+genCase3 = do
+  writeFile "case3.svg" $ svgstrs
+  where svgstrs = svgBegin w h ++ svgfigs ++ svgEnd
+        svgfigs = svgElements svgCircle circles (map svgStyle palette)
+        circles = get_sobrepostos pos_x pos_y raio nelement
+        palette = get_color_sobrepostos (3*nelement)
+        pos_x = 160.0
+        pos_y = 160.0
+        raio = 50.0
+        nelement = 6
+        (w,h) = (1920,1080) -- width,height da imagem SVG
