@@ -153,3 +153,40 @@ genCase3 = do
         raio = 50.0
         nelement = 6
         (w,h) = (1920,1080) -- width,height da imagem SVG
+
+-- Calcula a posicao de cada circulo, baseada no padrao de uma senoide
+gen_senoide :: Int ->Float->Float-> Float ->Float ->[Circle]
+gen_senoide n t x_inicio amplitude r = [if sin(ang*m+3) > 0 then ((x_inicio+ang*m*amplitude,amplitude/2 - sin(ang*m+3)*amplitude+100+2*amplitude*t),r)
+else if sin(ang*m+3) < 0 then ((x_inicio+ang*m*amplitude,(-1*sin(ang*m+3))*amplitude + amplitude/2+100+2*amplitude*t),r) 
+else ((x_inicio+ang*m*amplitude,amplitude + (amplitude/2)+100+2*amplitude*t),r) | m <- [0..fromIntegral(n-1)]]
+     where 
+          ang = (7.28 / fromIntegral(n))
+
+-- Gera lista com os circulos
+get_senoide :: Int -> Int-> Float-> Float ->Float ->[Circle]
+get_senoide n n_l x_inicio amplitude r = concat[gen_senoide n z x_inicio amplitude r | z <-[0..fromIntegral(n_l-1)]]
+
+-- Calcula a cor de cada circulo
+calcula_cores_senoide :: Int ->Int->Int-> [(Int,Int,Int)]
+calcula_cores_senoide x y z = [if(z `elem`[1,4..70]) then (80+10*i,0,0) else if(z `elem`[2,5..50]) then(0,80+10*i,0) else (0,0,80+10*i) | i <- [0..(x-1)] ]
+
+-- Gera cor para cada circulo
+get_color_senoide :: Int -> Int -> [(Int,Int,Int)]
+get_color_senoide ncircles_linha n_l = concat[calcula_cores_senoide ncircles_linha n_l m | m <- [1..(n_l)]]
+
+-------------------------------------------------------------------------------
+-- Funcao que gera case 4
+-------------------------------------------------------------------------------
+genCase4 :: IO ()
+genCase4 = do
+  writeFile "case4.svg" $ svgstrs
+  where svgstrs = svgBegin w h ++ svgfigs ++ svgEnd
+        svgfigs = svgElements svgCircle circles (map svgStyle palette)
+        circles = get_senoide ncircles_linha nlinhas x_frst amplitude_f_x raio
+        palette = get_color_senoide ncircles_linha nlinhas
+        ncircles_linha = 16
+        nlinhas = 3
+        x_frst = 80.0
+        amplitude_f_x = 55.0
+        raio = 20.0
+        (w,h) = (1920,1080) -- width,height da imagem SVG
