@@ -34,7 +34,7 @@ genRectsInLine n i y= [((i+(m*gap),y),w,h) | m <- [0..fromIntegral (n-1)]]
 -- dadas coordenadas e dimensoes do retângulo e uma string com atributos de estilo
 svgRect :: Rect -> String -> String 
 svgRect ((x,y),w,h) style = 
-  printf "<rect x='%.3f' y='%.3f' width='%.2f' height='%.2f' style='%s' />\n" x y w h style
+  printf "<rect x='%.3f' y='%.3f' width='%.2f' height='%.2f' style='%s'/>\n" x y w h style
 
 -- Gera string representando circulo SVG
 svgCircle :: Circle -> String -> String 
