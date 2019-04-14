@@ -1,0 +1,6 @@
+genCase4
+genCase3
+genCase2
+genCase1
+:load D://User/Documentos/GitHub/paradigmas/t2/t2.hs
+:load User/Documentos/GitHub/paradigmas/t2/t2.hs
