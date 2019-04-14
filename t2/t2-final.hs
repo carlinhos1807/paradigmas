@@ -16,6 +16,8 @@ rgbPalette n = take n $ cycle [(255,0,0),(0,255,0),(0,0,255)]
 greenPalette :: Int ->Int-> [(Int,Int,Int)]
 greenPalette n h = [(0,10*i+h,0) | i <- [0..(n-1)] ]
 
+circlesPalette :: Int ->Int-> [(Int,Int,Int)]
+circlesPalette n h = [(30*i+h,10*i+h,30*i) | i <- [0..(n-1)] ]
 
 -------------------------------------------------------------------------------
 -- Geração de retângulos em suas posições
