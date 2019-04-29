@@ -59,3 +59,13 @@ onlyEven(L1,L2) :-
    L1 = [_|T],
    onlyEven(T,L3),
    L2 = L3.
+
+% 7.Defina um predicado recursivo countdown(N,L), de forma que L seja uma lista com os números [N, N-1, N-2, .., 1], 
+% sendo N um número positivo.
+
+countdown(1,[1]).
+countdown(N,L) :-
+   N > 0,
+   C is N - 1,
+   countdown(C,L3),
+   L = [N|L3].
