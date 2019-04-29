@@ -80,7 +80,6 @@ nRandoms(N,L) :-
    random(0,1000,X),
    L = [X|L3].
 
-
 % 9.Defina um predicado recursivo potN0(N,L), de forma que L seja uma lista de potências de 2, com expoentes de N a 0. 
 
 potN0(0,[1]).
@@ -100,7 +99,6 @@ zipmult(L1,L2,L3) :-
    zipmult(T,B,LN),
    D is H*A,
    L3 = [D|LN].
-
 
 % 11.Defina um predicado recursivo potencias(N,L), de forma que L seja uma lista com as N primeiras potências de 2, sendo a primeira 2^0 e assim por diante
 
