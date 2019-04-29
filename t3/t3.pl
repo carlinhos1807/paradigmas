@@ -90,3 +90,13 @@ potN0(N,L) :-
    potN0(C,L3),
    pow(2,N,D),
    L = [D|L3].
+
+% 10.Defina um predicado recursivo zipmult(L1,L2,L3), de forma que cada elemento da lista L3 seja o produto dos elementos de L1 e L2 na mesma posição do elemento de L3.
+
+zipmult([],[],[]).
+zipmult(L1,L2,L3) :-
+   L1 = [H|T],
+   L2 = [A|B],
+   zipmult(T,B,LN),
+   D is H*A,
+   L3 = [D|LN].
