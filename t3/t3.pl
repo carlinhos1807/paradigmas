@@ -69,3 +69,13 @@ countdown(N,L) :-
    C is N - 1,
    countdown(C,L3),
    L = [N|L3].
+
+% 8.Defina um predicado recursivo nRandoms(N,L), de forma que L seja uma lista com N números gerados aleatoriamente.   
+
+nRandoms(0,[]).
+nRandoms(N,L) :-
+   N > 0,
+   C is N - 1,
+   nRandoms(C,L3),
+   random(0,1000,X),
+   L = [X|L3].
