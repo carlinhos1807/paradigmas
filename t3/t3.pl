@@ -32,3 +32,14 @@ incN(L1,L2,N) :-
    incN(T,L3,N),
    D is H + N,
    L2 = [D|L3].
+
+% 5.Defina um predicado recursivo comment(L1,L2), de forma que L1 seja uma lista de strings e L2 
+% tenha todos os elementos de L1 concatenados com o prefixo "%%".
+
+comment([],[]).
+comment(L1,L2) :- 
+   L1 = [H|T],
+   comment(T,L3),
+   string_concat("%%",H,X),
+   atom_string(Y,X),
+   L2 = [Y|L3].
