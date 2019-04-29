@@ -1,4 +1,4 @@
-% 1.Defina um predicado odd(N) que seja verdadeiro se N for um número ímpar
+% 1.Defina um predicado odd(N) que seja verdadeiro se N for um numero impar
 
 odd(N) :- A is mod(N,2), A = 1.
 
@@ -45,7 +45,7 @@ comment(L1,L2) :-
    L2 = [Y|L3].
 
 % 6.Defina um predicado recursivo onlyEven(L1,L2), de forma que L2 
-% seja uma lista só com os elementos pares de L1.
+% seja uma lista so com os elementos pares de L1.
 
 onlyEven([],[]).
 onlyEven(L1,L2) :- 
@@ -60,8 +60,8 @@ onlyEven(L1,L2) :-
    onlyEven(T,L3),
    L2 = L3.
 
-% 7.Defina um predicado recursivo countdown(N,L), de forma que L seja uma lista com os números [N, N-1, N-2, .., 1], 
-% sendo N um número positivo.
+% 7.Defina um predicado recursivo countdown(N,L), de forma que L seja uma lista com os numeros [N, N-1, N-2, .., 1], 
+% sendo N um numero positivo.
 
 countdown(1,[1]).
 countdown(N,L) :-
@@ -70,7 +70,7 @@ countdown(N,L) :-
    countdown(C,L3),
    L = [N|L3].
 
-% 8.Defina um predicado recursivo nRandoms(N,L), de forma que L seja uma lista com N números gerados aleatoriamente.   
+% 8.Defina um predicado recursivo nRandoms(N,L), de forma que L seja uma lista com N numeros gerados aleatoriamente.   
 
 nRandoms(0,[]).
 nRandoms(N,L) :-
@@ -80,7 +80,7 @@ nRandoms(N,L) :-
    random(0,1000,X),
    L = [X|L3].
 
-% 9.Defina um predicado recursivo potN0(N,L), de forma que L seja uma lista de potências de 2, com expoentes de N a 0. 
+% 9.Defina um predicado recursivo potN0(N,L), de forma que L seja uma lista de potencias de 2, com expoentes de N a 0. 
 
 potN0(0,[1]).
 potN0(N,L) :-
@@ -90,7 +90,7 @@ potN0(N,L) :-
    pow(2,N,D),
    L = [D|L3].
 
-% 10.Defina um predicado recursivo zipmult(L1,L2,L3), de forma que cada elemento da lista L3 seja o produto dos elementos de L1 e L2 na mesma posição do elemento de L3.
+% 10.Defina um predicado recursivo zipmult(L1,L2,L3), de forma que cada elemento da lista L3 seja o produto dos elementos de L1 e L2 na mesma posicao do elemento de L3.
 
 zipmult([],[],[]).
 zipmult(L1,L2,L3) :-
@@ -100,7 +100,7 @@ zipmult(L1,L2,L3) :-
    D is H*A,
    L3 = [D|LN].
 
-% 11.Defina um predicado recursivo potencias(N,L), de forma que L seja uma lista com as N primeiras potências de 2, sendo a primeira 2^0 e assim por diante
+% 11.Defina um predicado recursivo potencias(N,L), de forma que L seja uma lista com as N primeiras potencias de 2, sendo a primeira 2^0 e assim por diante
 
 potencias2(A,A,[]).
 potencias2(X,N1,LN) :-
@@ -114,8 +114,8 @@ potencias(0,[]).
 potencias(N,L) :-
    potencias2(0,N,L).
 
-% 12.Defina um predicao recursivo cedulas(V,L1,L2), que receba um valor V e uma lista L1 de cédulas com valores em Reais (R$), 
-% em ordem decrescente, e obtenha a lista L2 decompondo o valor V em 0 ou mais cédulas de cada tipo. 
+% 12.Defina um predicao recursivo cedulas(V,L1,L2), que receba um valor V e uma lista L1 de cedulas com valores em Reais (R$), 
+% em ordem decrescente, e obtenha a lista L2 decompondo o valor V em 0 ou mais cedulas de cada tipo. 
 
 cedulas(_,[],[]).
 cedulas(V,L1,L2) :-
