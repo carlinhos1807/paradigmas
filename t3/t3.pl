@@ -43,3 +43,19 @@ comment(L1,L2) :-
    string_concat("%%",H,X),
    atom_string(Y,X),
    L2 = [Y|L3].
+
+% 6.Defina um predicado recursivo onlyEven(L1,L2), de forma que L2 
+% seja uma lista só com os elementos pares de L1.
+
+onlyEven([],[]).
+onlyEven(L1,L2) :- 
+   L1 = [H|T],
+   onlyEven(T,L3),
+   A is mod(H,2),
+   A = 0,
+   L2 = [H|L3].
+
+onlyEven(L1,L2) :-
+   L1 = [_|T],
+   onlyEven(T,L3),
+   L2 = L3.
