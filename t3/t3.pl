@@ -100,3 +100,18 @@ zipmult(L1,L2,L3) :-
    zipmult(T,B,LN),
    D is H*A,
    L3 = [D|LN].
+
+
+% 11.Defina um predicado recursivo potencias(N,L), de forma que L seja uma lista com as N primeiras potências de 2, sendo a primeira 2^0 e assim por diante
+
+potencias2(A,A,[]).
+potencias2(X,N1,LN) :-
+   X < N1,
+   C is X+1,
+   potencias2(C,N1,L3),
+   pow(2,X,D),
+   LN = [D|L3].
+
+potencias(0,[]).
+potencias(N,L) :-
+   potencias2(0,N,L).
