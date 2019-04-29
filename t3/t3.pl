@@ -12,3 +12,13 @@ tamanho_lista(L,N) :-
   N is (1+N1).
 
 hasN(L,N) :- tamanho_lista(L,X),N = X.
+
+% 3.Defina um predicado recursivo inc99(L1,L2), de forma 
+% que L2 seja uma lista com todos os elementos de L1 acrescidos da constante 99
+
+inc99([],[]).
+inc99(L1,L2) :- 
+   L1 = [H|T],
+   inc99(T,L3),
+   D is H + 99,
+   L2 = [D|L3].
