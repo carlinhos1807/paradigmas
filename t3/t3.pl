@@ -22,3 +22,13 @@ inc99(L1,L2) :-
    inc99(T,L3),
    D is H + 99,
    L2 = [D|L3].
+
+% 4.Defina um predicado recursivo incN(L1,L2,N), 
+% de forma que L2 seja uma lista com todos os elementos de L1 acrescidos da constante N.
+
+incN([],[],_).
+incN(L1,L2,N) :- 
+   L1 = [H|T],
+   incN(T,L3,N),
+   D is H + N,
+   L2 = [D|L3].
