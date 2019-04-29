@@ -79,3 +79,14 @@ nRandoms(N,L) :-
    nRandoms(C,L3),
    random(0,1000,X),
    L = [X|L3].
+
+
+% 9.Defina um predicado recursivo potN0(N,L), de forma que L seja uma lista de potências de 2, com expoentes de N a 0. 
+
+potN0(0,[1]).
+potN0(N,L) :-
+   N > 0,
+   C is N - 1,
+   potN0(C,L3),
+   pow(2,N,D),
+   L = [D|L3].
