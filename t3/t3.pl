@@ -115,3 +115,14 @@ potencias2(X,N1,LN) :-
 potencias(0,[]).
 potencias(N,L) :-
    potencias2(0,N,L).
+
+% 12.Defina um predicao recursivo cedulas(V,L1,L2), que receba um valor V e uma lista L1 de cédulas com valores em Reais (R$), 
+% em ordem decrescente, e obtenha a lista L2 decompondo o valor V em 0 ou mais cédulas de cada tipo. 
+
+cedulas(_,[],[]).
+cedulas(V,L1,L2) :-
+   L1 = [H|T],
+   A is div(V,H),
+   C is mod(V,H),
+   cedulas(C,T,L3),
+   L2 = [A|L3].
