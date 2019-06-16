@@ -2,7 +2,7 @@
 
 *A variavel <b>url</b> referencia um objeto da classe <b>URL</b><br>
 *As variaveis <b>data</b> e <b>urlstr</b> referenciam um objeto da classe <b>String</b><br>
-*A variavel con referencia um objeto da classe <b>HttpURLConnection</b><br>
+*A variavel <b>con</b> referencia um objeto da classe <b>HttpURLConnection</b><br>
 
 # Resposta da questão 2:
 
@@ -16,7 +16,8 @@ O mesmo já n acontece se criarmos objetos, pois seja String A = new String("abc
 A classe HttpURLConnection é abstrata, portanto não permite a realização de qualquer tipo de instância.<br>
 
 # Resposta da questão 4:
-O resultado foi class sun.net.www.protocol.https.HttpsURLConnectionImpl e o método getClass() está definido na classe Object.<br>
+O resultado foi class sun.net.www.protocol.https.HttpsURLConnectionImpl<br>
+O método getClass() está definido na classe Object.<br>
 
 # Resposta da questão 5:
 Se aplica a um objeto da classe OutputStream<br>
