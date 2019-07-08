@@ -1,0 +1,3 @@
+https://api.github.com/repos/carlinhos1807/programas
+https://api.github.com/repos/carlinhos1807/paradigmas
+https://api.github.com/repos/carlinhos1807/teste
