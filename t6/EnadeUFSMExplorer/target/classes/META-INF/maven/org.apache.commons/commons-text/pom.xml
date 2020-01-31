@@ -49,7 +49,7 @@
     <commons.release.isDistModule>true</commons.release.isDistModule>
 
     <checkstyle.plugin.version>3.0.0</checkstyle.plugin.version>
-    <checkstyle.version>6.19</checkstyle.version>
+    <checkstyle.version>8.29</checkstyle.version>
   </properties>
 
   <dependencies>
